@@ -1,2 +1,6 @@
 # car-brands-map
 This project shows how to build a perceptual positioning map using Twitter's data. 
+The data are stored in a .db file, containing a column for the Twitter account (ex: TeslaMotors), and a column for the Twitter ID of the followers. 
+I evaluate the relative position of a car brand with respect to two dimensions (Eco-friendliness and Luxury) computing a weighted Jaccard Index of the followers of the pages. Eco-friendly accounts are, for example, Greenpeace and HuffPostGreen, while Luxury accounts are LuxurySociety and Luxuo. For each car brand I compute the Jaccard Index for a dimension as the size of the followers' intersection, divided by the size of the followers' union. The weights are represented by the inverse of number of followers of each exemplar (the accounts for the two dimensions). In this way I give a higher reward to niche accounts with less number of followers. 
+The results show the reliability of this approach: for instance, Tesla is perceived by Twitter users as very Eco-friendly, while Rolls Royce's followers are more into luxury pages. 
+While this methodology may be biased towards Twitter users and may not work for smaller accounts with not enough followers, it represents a viable, easily scalable and cheap alternative to expensive manual approaches.
